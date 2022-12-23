@@ -39,3 +39,21 @@ int doUnion(int a[], int n, int b[], int m)  {
     return s.size();
     //code here
 }
+
+int doIntersection(int a[], int b[], int m, int n){
+    unordered_set<int> s;
+    int count = 0;
+    for(int i = 0; i<m; i++){
+        s.insert(a[i]);
+    }
+
+    for(int j = 0; j<n; j++){
+        if(s.find(b[j])!=s.end()){
+
+            s.erase(b[j]);
+
+            count++;
+        }
+    }
+    return count;
+}
